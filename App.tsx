@@ -43,8 +43,33 @@ class App extends React.Component {
         </div>
         </div>
         
-        
-        
+        </div
+<div className='row mt-5'>
+  <div className='col-12 d-flex justify-content-between align-items-center'>
+    <h4>Ringkasan Transaksi</h4>
+    <div className='wtapper-button'>
+      <button className='button btn-ungu px-3 py-2 me-2'>Pemasukan<i class="bi bi-plus-circle-fill"></i></button>
+      <button className='button btn-pink px-3 py-2'>Pengeluaran<i class="bi bi-dash-circle-fill"></i></button>
+      </div>
+      </div>
+      </div>
+
+      <div className='row mt-4'>
+        {this.state.summary.map{(sum) => {
+          return (
+        <div className='col-12 d-flex justify-content-between align-items-center'>
+      <div className='d-flex align-items-text'>
+        <div className={sum.category === 'IN' ?  'icon-wrapper-IN': 'icon-wrapper-OUT'}>
+          <i class={sum.category === 'IN' ? "bi bi-wallet2" : "bi bi-bag-dash"}></i>
+            </div>
+    <div className='transaction ms-3 d-flex flex-column'>
+      <h6>{sum.deskripsi}</h6>
+      <span className='title-sm'>{sum.tanggal}</span>
+      
+      </div>
+      </div>
+      <h5 className='text-money-In'>Rp. {sum.nominal} ,-</h5>
+         </div>
 
       </>
     )
